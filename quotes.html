@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote</title>
+
+    <style>
+
+        .widget {
+            padding: 5px 5px ;
+            color: #000000;
+            text-align: center;
+                max-width: 95%;
+            margin: auto;
+            font-variant-caps: petite-caps;
+            font-size: 2em;
+
+        }
+
+        div {
+             width: 95%;
+             min-height: 100px;
+
+            background:
+                linear-gradient(to right, black 4px, transparent 4px) 0 0,
+                linear-gradient(to right, black 4px, transparent 4px) 0 100%,
+                linear-gradient(to left, black 4px, transparent 4px) 100% 0,
+                linear-gradient(to left, black 4px, transparent 4px) 100% 100%,
+                linear-gradient(to bottom, black 4px, transparent 4px) 0 0,
+                linear-gradient(to bottom, black 4px, transparent 4px) 100% 0,
+                linear-gradient(to top, black 4px, transparent 4px) 0 100%,
+                linear-gradient(to top, black 4px, transparent 4px) 100% 100%;
+
+            background-repeat: no-repeat;
+            background-size: 20px 20px;
+}
+
+     
+    </style>
+</head>
+<body>
+
+    <div class="widget" id="widget"></div>
+
+
+<script>
+
+quotes=[
+"I’m scared of the love I have for you, because I know it will ruin me, and I also know that I’ll let it. I love hard.",
+"I'm selfish, impatient and a little insecure. I make mistakes, I am out of control and at times hard to handle. But if you can't handle me at my worst, then you sure as hell don't deserve me at my best.",
+"I'll survive. Somehow I always do.",
+"I desire the things that will destroy me in the end.",
+"Maybe we were meant to meet but not to be.",
+"Sometimes you expect a lot from someone because you'd do that much for them.",
+"I don't care what happens anymore.",
+"Think I'll miss you forever. Like the stars miss the sun in the morning sky.",
+"Secrets I have held in my heart. Are harder to hide than I thought. Maybe I just wanna be yours.",
+"'Cause if we don't leave this town. We might never make it out. I was not born to drown. Baby come on.",
+"We might be dead by tomorrow.",
+"You drew stars around my scars, But now I'm bleedin'",
+"You're on your own, kid. You always have been.",
+"I gave my blood, sweat and, tears for this. I hosted parties and starved my body. Like I'd be saved by a perfect grades.",
+"Everything you lose is a step you take.",
+"'Cause there were pages turned with the bridges burned.",
+"I live for the applause.",
+"If you go, I'll stay. You come back, I'll be right here.",
+"For you, I would cross the line, I would waste my time, I would lose my mind.",
+"I do very bad things, And I do them very well.",
+"Fine. Make me your villain.",
+"I am the monster you created.",
+"I am the villain of this story.",
+"You want to kill me? Get in line, bitch.",
+"memories, ouch"
+"He was never mine, but losing him broke my heart.",
+"Our 'almost' will always haunt me.",
+"She's whiskey in a teacup.",
+"She lives the poetry she cannot write.",
+"Semper paratus",
+"Carpe diem",
+"So heartless, yet so full of feelings.",
+"She's gonna forever say 'I got this', even with tears in her eyes.",
+"It's better this way. A little lonelier but better.",
+"Sometimes, happy memories hurt the most.",
+"You will always be my favorite hello and hardest goodbye.",
+"In the end, we'll all become stories.",
+"How long is forever? Sometimes, just one second.",
+"Maybe, FOREVER, was a word meant for memories and not people.",
+"What I was made for?",
+"Oh but that's irony, broken people are not fragile.",
+"Here's a real question: how have you survived this long when you're so violently self-destructive?",
+"It's crazy how trauma makes you push people away when all you want is love.",
+"You cannot find peace by avoiding life.",
+"I needed a hug but all they gave me was a box of matches and a knife.",
+];
+
+const INTERVAL = 86400000;
+
+function dispalyQuote(){
+
+    document.getElementById('widget').innerHTML =quotes[0];
+    quotes.forEach((quote, i) => {
+        setTimeout(() => {
+            document.getElementById('widget').innerHTML =quote;
+        }, i * INTERVAL);  
+    });
+    }
+
+    function dispalyWidget() {
+        dispalyQuote();
+        setTimeout(dispalyWidget, quotes.length*INTERVAL);
+    }
+    dispalyWidget()
+
+</script>
+
+</body>
+</html>
